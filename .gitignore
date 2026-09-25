@@ -1,0 +1,22 @@
+# virtualenv
+.venv/
+venv/
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# generated output
+artifacts/
+
+# secrets
+.env
+
+# submission materials (delivered separately, not part of the codebase)
+*.pptx
+*.pdf
+~$*
