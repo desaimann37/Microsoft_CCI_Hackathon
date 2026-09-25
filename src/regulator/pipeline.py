@@ -32,6 +32,7 @@ from .models import (
     RiskJudgement,
     ScubaBaseline,
 )
+from . import paths
 from .nist_catalog import load_catalog
 from .oscal.assessment_results import build_assessment_results
 from .oscal.catalog import build_catalog
@@ -42,8 +43,8 @@ from .parsers.scuba_baseline import parse_baseline
 from .parsers.scubagear import parse_assessment
 from .validation import ValidationResult, validate
 
-DEFAULT_BASELINE_DIR = Path("data/sources/scuba")
-DEFAULT_NIST_CATALOG = "data/sources/nist/sp800-53r5-catalog.json"
+DEFAULT_BASELINE_DIR = paths.BASELINE_DIR
+DEFAULT_NIST_CATALOG = str(paths.NIST_CATALOG)
 
 FILENAMES = {
     "catalog": "scuba-catalog-{product}.json",

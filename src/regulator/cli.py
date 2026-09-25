@@ -20,7 +20,7 @@ from .agents.registry import build_providers
 from .evaluation import evaluate_crosswalk
 from .nist_catalog import load_catalog
 from .parsers.scuba_baseline import parse_baseline
-from .pipeline import DEFAULT_NIST_CATALOG, Pipeline
+from .pipeline import DEFAULT_BASELINE_DIR, DEFAULT_NIST_CATALOG, Pipeline
 from .query import QueryEngine
 from .validation import OSCAL_MODELS, OSCAL_VERSION, validate
 
@@ -137,7 +137,7 @@ app.command("validate")(validate_artifact)
 @app.command()
 def evaluate(
     product: str = typer.Option("AAD", "--product", "-p"),
-    baseline_dir: Path = typer.Option(Path("data/sources/scuba"), "--baselines"),
+    baseline_dir: Path = typer.Option(DEFAULT_BASELINE_DIR, "--baselines"),
     json_out: Path | None = typer.Option(None, "--json", help="Write the report as JSON."),
 ) -> None:
     """Score the crosswalk against CISA's own published NIST mapping."""

@@ -30,6 +30,8 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
+from . import paths
+
 import regex as _regex
 from jsonschema import Draft202012Validator
 from jsonschema import ValidationError as _JsonSchemaValidationError
@@ -48,7 +50,7 @@ OSCAL_MODELS: dict[str, str] = {
 #: versions across artifacts is a silent, expensive failure.
 OSCAL_VERSION = "1.2.3"
 
-DEFAULT_SCHEMA_DIR = Path("data/schemas")
+DEFAULT_SCHEMA_DIR = paths.SCHEMA_DIR
 
 
 @dataclass(frozen=True)

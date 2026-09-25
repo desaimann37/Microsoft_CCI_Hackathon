@@ -91,6 +91,18 @@ public CISA and NIST data committed to this repository.
 
 ![Dashboard](docs/dashboard.png)
 
+## Deployment
+
+The dashboard runs as an ordinary ASGI app and needs **no credentials** — it
+serves the public CISA sample report committed here, so a reviewer can open it
+and click without an account:
+
+```bash
+PYTHONPATH=src python -m uvicorn regulator.asgi:app --host 0.0.0.0 --port 8000
+```
+
+See [DEPLOY.md](DEPLOY.md) for Azure App Service and custom-domain setup.
+
 ## Microsoft Foundry
 
 Set these three variables and the four agents switch from the offline baseline to
